@@ -1,0 +1,11 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Cấu hình Rules cho Hệ thống Sổ tay Trường Mầm non Ánh Sao
+    // Cho phép đọc và ghi dữ liệu các bộ sưu tập: users, meetings, attendance, minutes, feedbacks, aiLinks, driveFiles
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}
